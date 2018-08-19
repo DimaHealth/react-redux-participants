@@ -1,0 +1,175 @@
+@import "../variables"
+
+$color-gray: #777d91
+$color-pagi: #dad7f1
+
+.leaders
+  height: 100%
+  background-color: white
+  border-radius: 2px
+  overflow: hidden
+  display: flex
+  flex-direction: column
+
+  &__head
+    background-color: $color-base-violet
+    color: white
+    padding: 23px 32px
+    font-size: 24px
+
+    +max-w($mobile-lg)
+      padding: 13px 20px
+      font-size: 18px
+
+    +max-w($mobile-xsm)
+      padding: 10px 16px
+      font-size: 16px
+
+  &__content
+    padding: 23px 30px
+    box-sizing: border-box
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
+
+    +max-w($mobile-lg)
+      padding: 23px
+
+    +max-w($mobile-xsm)
+      padding: 16px
+
+  &__havent
+    text-align: center
+    color: $color-base-gray
+
+  &__items-wrap
+    height: 100%
+    flex: 1 0 auto
+
+    &--winners
+      .leaders__item
+        &:first-child, &:nth-child(2), &:nth-child(3)
+          background-image: url("/img/rank.png")
+          background-repeat: no-repeat
+          background-position: calc(100% - 27px) center
+          background-size: 65px 65px
+
+          +max-w($mobile-lg)
+            background-size: 45px 45px
+
+          +max-w($mobile-xsm)
+            background-position: calc(100% - 15px) center
+
+        &:nth-child(2)
+          background-image: url("/img/rank2.png")
+
+        &:nth-child(3)
+          background-image: url("/img/rank3.png")
+
+  &__item
+    padding: 27px
+    border: 2px solid $color-bg
+    border-radius: 2px
+    margin-bottom: 14px
+
+    +max-w($mobile-lg)
+      padding: 16px
+
+    +max-w($mobile-xsm)
+      padding: 12px
+
+    &:last-child
+      margin-bottom: 0
+
+  &__item-name
+    font-size: 21px
+    color: $color-gray
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+    +max-w($mobile-lg)
+      font-size: 16px
+
+    +max-w($mobile-xsm)
+      font-size: 14px
+
+  &__item-score
+    font-size: 18px
+    margin-top: 8px
+    color: $color-base-gray
+    overflow: hidden
+    text-overflow: ellipsis
+
+    +max-w($mobile-lg)
+      font-size: 14px
+      margin-top: 6px
+
+    +max-w($mobile-xsm)
+      font-size: 12px
+
+  &__nav
+    text-align: center
+    margin-top: 20px
+
+    .slick-slider
+      display: inline-block
+      
+    .slick-list
+      width: 180px
+      margin: 0 auto
+
+      +max-w($mobile-sm)
+        width: 140px
+
+    .slick-disabled
+      opacity: 0.5
+
+    .slick-prev, .slick-next
+      background-image: url("/img/arrow.png")
+      background-size: cover
+
+      &:before
+        content: none
+
+    .slick-next
+      transform: rotate(180deg) translate(0, 35%)
+      right: -40px
+
+      +max-w($mobile-sm)
+        right: -30px
+
+    .slick-prev
+      left: -40px
+      transform: translate(0, -35%)
+
+      +max-w($mobile-sm)
+        left: -20px
+
+  &__info
+    width: 80%
+    overflow: hidden
+
+    +max-w($mobile-lg)
+      width: 70%
+
+  &__nav-item
+    max-width: 8px
+    max-height: 8px
+    width: 8px
+    height: 8px
+    border-radius: 50%
+    background-color: $color-pagi
+    display: inline-block
+    margin: 0 16px
+    vertical-align: middle
+    cursor: pointer
+    user-select: none
+    outline: none
+
+    &--active
+      max-width: 11px
+      max-height: 11px
+      width: 11px
+      height: 11px
+      background-color: $color-base-violet

@@ -1,0 +1,27 @@
+=max-woh($width, $height)
+  @media screen and (max-width: #{$width}px), (max-height: #{$height}px)
+    @content
+
+=max-wah($width, $height)
+  @media screen and (max-width: #{$width}px) and (max-height: #{$height}px)
+    @content
+
+=min-w($width)
+  @media screen and (min-width: #{$width}px)
+    @content
+
+=max-w($width)
+  @media screen and (max-width: #{$width}px)
+    @content
+
+=max-h($height)
+  @media screen and (max-height: #{$height}px)
+    @content
+
+=min-h($height)
+  @media screen and (min-height: #{$height}px)
+    @content
+//
+//=max-w-landsxape($width)
+//  @media (max-width:  #{$width}px), (orientation: landscape)
+//    @content

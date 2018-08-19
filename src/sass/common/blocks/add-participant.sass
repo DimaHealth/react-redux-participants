@@ -1,0 +1,48 @@
+@import "../variables"
+
+.add-participant
+  height: 100%
+  background-color: white
+  border-radius: 2px
+  overflow: hidden
+
+  &__head
+    background-color: $color-base-green
+    color: white
+    padding: 23px 32px
+    font-size: 24px
+
+    +max-w($mobile-lg)
+      padding: 13px 20px
+      font-size: 18px
+
+    +max-w($mobile-xsm)
+      padding: 10px 16px
+      font-size: 16px
+
+  &__content
+    margin-top: 90px
+    padding: 0 30px 30px 30px
+
+    +max-w($mobile-lg)
+      margin-top: 40px
+
+    +max-w($mobile-xsm)
+      padding: 16px
+      margin-top: 20px
+
+  &__fields
+    margin-bottom: 65px
+
+    +max-w($mobile-lg)
+      margin-bottom: 30px
+
+  &__fields-item
+    &:first-child
+      margin-bottom: 60px
+
+      +max-w($mobile-lg)
+        margin-bottom: 30px
+
+  &__button
+    text-align: right
