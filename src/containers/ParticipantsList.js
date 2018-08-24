@@ -17,15 +17,20 @@ class ParticipantsList extends Component {
     }
 
     checkWindowSize = () =>{
-        if (window.innerWidth > 1280 && window.innerHeight < 1000 && this.props.participants.length){
-            console.log(window.innerHeight);
+        if (window.innerWidth > 1280 && window.innerHeight < 1000){
 
             if(window.innerHeight >= 900){
-                this.setState({perPage: 5, curPage: 0})
+                if(this.state.perPage !== 5) {
+                    this.setState({perPage: 5, curPage: 0})
+                }
             } else if(window.innerHeight >= 750){
-                this.setState({perPage: 4, curPage: 0})
+                if(this.state.perPage !== 4){
+                    this.setState({perPage: 4, curPage: 0})
+                }
             }else  if (window.innerHeight >= 500){
-                this.setState({perPage: 3, curPage: 0})
+                if(this.state.perPage !== 3) {
+                    this.setState({perPage: 3, curPage: 0})
+                }
             }
         }else if(this.state.perPage !== 6){
             this.setState({perPage: 6, curPage: 0})
@@ -82,6 +87,9 @@ class ParticipantsList extends Component {
                 </div>
             )
         }
+        // console.log(curPage);
+        // console.log(perPage);
+
         let participantsSorted = this.sortlist();
         return participantsSorted.slice(curPage * perPage, (curPage + 1) * perPage).map((participants,
                                                                                          index) => {
